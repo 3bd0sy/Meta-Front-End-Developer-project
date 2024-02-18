@@ -1,28 +1,22 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import Nav from "./Nav"
-import logo from "./assat/nav-logo.png"
-import "./css/Header.css"
-
-export class Header extends Component {
-    static propTypes = {}
-
-    render() {
+import React from 'react'
+import { Link } from "react-router-dom";
+import bannerImg from "./assat/restauranfood.jpg"
+function  Header () {
         return <>
-            <div className="h-continer">
-                <img src={logo} alt="" height="100px" />
-                <div>
-                    <ul className='h-list'>
-                        <li><a href="Home">Home</a></li>
-                        <li><a href="about">About Us</a></li>
-                        <li><a href="services">Services</a></li>
-                        <li><a href="contact">Contact Us</a></li>
-                        <li><a href="search">Search</a></li>
-                    </ul>
-                </div>
-            </div>
+            <header className='header'>
+                <section>
+                    <div>
+                        <h2>Little Lemon</h2>
+                        <h3>Chicago</h3>
+                        <p>we are a family owned mediterraneran resturant, focused on traditional recipes serverd with a modern twist</p>
+                        <Link to="/booking"><button aria-label='on click'>Reserve Table</button></Link>
+                    </div>
+                    <div className="banner-img">
+                        <img src={bannerImg} alt="" />
+                    </div>
+                </section>
+            </header>
         </>
-    }
 }
 
 export default Header
